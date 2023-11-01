@@ -1,0 +1,42 @@
+package com.npci.service;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
+import com.npci.beans.Profile;
+import com.npci.dao.ProfileDao;
+
+import exception.ProfileNotFoundException;
+
+@Service("loginService")  // id ="loginService"
+public class LoginServiceImplementation {
+
+	
+	  @Autowired
+		private ProfileDao profileDao;
+
+		@Override
+		public Profile loginToProfile(String email_id, String password) throws ProfileNotFoundException  {
+			 Profile op= profileDao.findByEmailId(email_id);
+			if(op==null )
+			{
+				throw new ProfileNotFoundException("Incorrect email id..");
+			}
+			if(op.getPassword()!=password)
+			{
+				throw new ProfileNotFoundException("Incorrect password..");
+			}
+		     System.out.println("Login successful....");
+			 return op;
+		}
+
+		@Override
+		public void logoutProfile(int profile_id) {
+			// TODO Auto-generated method stub
+			
+		}   
+	}
+
+
+
+}

@@ -1,0 +1,11 @@
+import java.time.LocalDate;
+public class Profile {
+	
+	private int Pid;
+	private String name;
+	private String passwprd;
+	private LocalDate Dob;
+	private long phno;
+	
+
+}

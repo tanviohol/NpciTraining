@@ -1,0 +1,10 @@
+package com.npci.beans;
+
+public class Contact {
+
+	private int contact_id;
+	
+	private Profile profile;
+	
+	private Wallet Wallet;
+}

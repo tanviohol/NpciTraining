@@ -1,0 +1,11 @@
+package com.npci.beans;
+
+public class Wallet {
+
+	private int wallet_id;
+	
+	private double amount;
+	
+	
+	private Account account;
+}
